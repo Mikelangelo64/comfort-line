@@ -132,6 +132,8 @@ $(document).ready(function () {
         let labelVal = label.innerHTML
         // let output = $('label[for=pdf] span')[0]
 
+        //console.log($(input).parent());
+
         input.addEventListener( 'change', function( e ){
             //console.log('hui', e.target.files[0].name);
             let fileName = '';
@@ -155,10 +157,12 @@ $(document).ready(function () {
     $('.pop-up .pop-up__close').click(function(e){
         $(this).parent().parent().removeClass('_active-pop-up')
         $('body').removeClass('_lock__pop')
+
     })
     $('.pop-up .pop-up__bg').click(function(e){
         $(this).parent().removeClass('_active-pop-up')
         $('body').removeClass('_lock__pop')
+
     })
 
     $('.open-pop-up__request').click(function(e){
@@ -168,6 +172,23 @@ $(document).ready(function () {
     $('.open-pop-up__call').click(function(e){
         $('.pop-up-call').addClass('_active-pop-up')
         $('body').addClass('_lock__pop')
+    })
+
+    $('.open-pop-up__video').click(function(e){
+        e.preventDefault()
+
+        $('.pop-up-video').addClass('_active-pop-up')
+        $('.video__item ')[0].load()
+        $('.video__item ')[0].play()
+        $('body').addClass('_lock__pop')
+    })
+    $('.pop-up__close').click(function(e){
+        //$(this).parent().parent().removeClass('_avtive-pop-up')
+        $('.pop-up-video .video__item ')[0].pause()
+    })
+    $('.pop-up__bg').click(function(e){
+        //$(this).parent().parent().removeClass('_avtive-pop-up')
+        $('.pop-up-video .video__item ')[0].pause()
     })
 
     //spec types pop-up
@@ -361,19 +382,19 @@ $(document).ready(function () {
     /*********************************** */
 
     //video pop up
-    $('.show-video').click(function(e){
-        e.preventDefault()
+    // $('.show-video').click(function(e){
+    //     e.preventDefault()
 
-        $('.pop-up-video').addClass('_avtive-video')
-        $('.video__item ')[0].load()
-        $('.video__item ')[0].play()
-    })
-    $('.pop-up-video__close__btn').click(function(e){
-        e.preventDefault()
+    //     $('.pop-up-video').addClass('_avtive-video')
+    //     $('.video__item ')[0].load()
+    //     $('.video__item ')[0].play()
+    // })
+    // $('.pop-up-video__close__btn').click(function(e){
+    //     e.preventDefault()
 
-        $('.pop-up-video').removeClass('_avtive-video')
-        $('.video__item ')[0].pause()
-    })
+    //     $('.pop-up-video').removeClass('_avtive-video')
+    //     $('.video__item ')[0].pause()
+    // })
 
     
     //header-anchor

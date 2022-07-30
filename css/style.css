@@ -312,7 +312,7 @@ a, button, .logo {
 form input[type=file] {
   display: none;
 }
-form label[for=pdf] {
+form label[for=pdf], form label[for=pdf-pop] {
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -330,20 +330,20 @@ form label[for=pdf] {
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 680px) {
-  form label[for=pdf] {
+  form label[for=pdf], form label[for=pdf-pop] {
     margin-bottom: 25px;
   }
 }
-form label[for=pdf]:hover {
+form label[for=pdf]:hover, form label[for=pdf-pop]:hover {
   color: #69A6F6;
 }
-form label[for=pdf]:hover svg path, form label[for=pdf]:hover svg rect {
+form label[for=pdf]:hover svg path, form label[for=pdf]:hover svg rect, form label[for=pdf-pop]:hover svg path, form label[for=pdf-pop]:hover svg rect {
   stroke: #69A6F6;
 }
-form label[for=pdf]:hover svg path {
+form label[for=pdf]:hover svg path, form label[for=pdf-pop]:hover svg path {
   fill: #69A6F6;
 }
-form label[for=pdf] svg {
+form label[for=pdf] svg, form label[for=pdf-pop] svg {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 46px;
           flex: 0 0 46px;
@@ -351,15 +351,15 @@ form label[for=pdf] svg {
   margin-right: 17px;
 }
 @media screen and (max-width: 680px) {
-  form label[for=pdf] svg {
+  form label[for=pdf] svg, form label[for=pdf-pop] svg {
     margin-right: 28px;
   }
 }
-form label[for=pdf] svg path, form label[for=pdf] svg rect {
+form label[for=pdf] svg path, form label[for=pdf] svg rect, form label[for=pdf-pop] svg path, form label[for=pdf-pop] svg rect {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-form label[for=pdf] span {
+form label[for=pdf] span, form label[for=pdf-pop] span {
   cursor: pointer;
 }
 form textarea {
@@ -767,6 +767,32 @@ form span {
   .pop-up.pop-up-call .pop-up__wrapper {
     height: 60%;
   }
+}
+.pop-up.pop-up-video .pop-up__wrapper {
+  max-width: 820px;
+  padding: 50px 60px 15px 60px;
+}
+@media screen and (max-width: 880px) {
+  .pop-up.pop-up-video .pop-up__wrapper {
+    max-width: 85%;
+    height: 60%;
+    padding: 50px 25px 15px 25px;
+  }
+}
+.pop-up.pop-up-video .video {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: inherit;
+  overflow: hidden;
+}
+.pop-up.pop-up-video .video__item {
+  aspect-ratio: 16/9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .pop-up__bg {
   position: absolute;
@@ -1966,8 +1992,13 @@ form span {
   }
 }
 .types-item-pop-up__container {
-  height: 100%;
+  height: 80%;
   width: 100%;
+}
+@media screen and (max-width: 1020px) {
+  .types-item-pop-up__container {
+    height: 95%;
+  }
 }
 .types-item-pop-up__wrapper {
   height: 100%;
@@ -2526,7 +2557,11 @@ form span {
   stroke: #69A6F6;
 }
 .portfolio .portfolio-item-pop-up {
+  cursor: default;
   padding: 0;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   position: fixed;
   top: 0;
   left: -100%;
@@ -2538,6 +2573,13 @@ form span {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   overflow: scroll;
+}
+@media screen and (max-width: 800px) {
+  .portfolio .portfolio-item-pop-up {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 .portfolio .portfolio-item-pop-up::-webkit-scrollbar {
   width: 7px;
@@ -2707,6 +2749,9 @@ form span {
 }
 .portfolio .portfolio-item-pop-up__swiper .portfolio-list-info .portfolio-list-info__title {
   margin-bottom: 30px;
+}
+.portfolio .portfolio-item-pop-up__swiper__small {
+  cursor: pointer;
 }
 @media screen and (max-width: 710px) {
   .portfolio .portfolio-item-pop-up__swiper__small {
@@ -3704,11 +3749,11 @@ form span {
 }
 .awards__swiper__wrapper {
   position: relative;
-  margin-bottom: 116px;
+  margin-bottom: 80px;
 }
 @media screen and (max-width: 1100px) {
   .awards__swiper__wrapper {
-    margin-bottom: 85px;
+    margin-bottom: 65px;
   }
 }
 @media screen and (max-width: 800px) {
@@ -3826,11 +3871,11 @@ form span {
 }
 
 .partners {
-  padding: 120px 0;
+  padding: 170px 0 120px 0;
 }
 @media screen and (max-width: 1200px) {
   .partners {
-    padding: 115px 0;
+    padding: 135px 0 115px 0;
   }
 }
 @media screen and (max-width: 850px) {
