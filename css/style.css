@@ -1707,6 +1707,12 @@ form span {
   display: flex;
   width: calc(100% - 40px);
   height: 100%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.types-item:hover {
+  -webkit-box-shadow: 0px 4px 18px 10px rgba(105, 166, 246, 0.25);
+          box-shadow: 0px 4px 18px 10px rgba(105, 166, 246, 0.25);
 }
 @media screen and (max-width: 1100px) {
   .types-item {
@@ -2705,6 +2711,7 @@ form span {
   }
 }
 .portfolio .portfolio-item-pop-up__swiper {
+  max-height: 710px;
   position: relative;
   margin-bottom: 22px;
 }
@@ -3617,6 +3624,9 @@ form span {
 }
 .production__title__container {
   margin-bottom: 64px;
+}
+.production__title__container .title__backtext p {
+  -webkit-text-stroke: 1.7px #828282;
 }
 @media screen and (max-width: 1650px) {
   .production__title__container .title__backtext p {
